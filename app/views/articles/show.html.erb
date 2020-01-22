@@ -1,0 +1,28 @@
+<h1>Article- <%=@article.id%></h1>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user.name if @article.user %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @article.description %>
+</p>
+
+<p>
+  <strong>Word Count:</strong>
+  <%= @article.word_count %>
+</p>
+
+<p>
+  <strong>Categories:</strong>
+</p>
+<% @article.categories.each do |post| %>
+    
+        <li><%= link_to post.name , category_path(post.id) if post.id %></li>
+        
+    <% end %>

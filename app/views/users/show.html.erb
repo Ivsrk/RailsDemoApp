@@ -1,0 +1,18 @@
+<h1>user- <%=@user.id%></h1>
+<p>
+  <strong>name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Articles:</strong>
+</p>
+<% @user.articles.each do |post| %>
+    
+        <li><%= link_to post.title , article_path(post.id) if post.id %></li>
+        
+    <% end %>
