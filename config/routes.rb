@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :article_categories
+  resources :logins
 "/articles/search"
 "users/:id/articles"
 #,only:[:index,:show,:destroy,:new,:create,:edit,:update]
