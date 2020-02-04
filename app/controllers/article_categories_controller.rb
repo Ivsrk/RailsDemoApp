@@ -1,4 +1,4 @@
-class ArticleCategoriesController < ApplicationController
+ ArticleCategoriesController < ApplicationController
     before_action :load_article_category ,only: [:show, :edit, :update, :destroy]
     def index
         @article_categories=ArticleCategory.all
@@ -47,16 +47,12 @@ class ArticleCategoriesController < ApplicationController
         end
     end
     private
+
     def load_article_category
         @article_category=ArticleCategory.find_by(id:params[:id])
-
     end
     def update_params
         params[:article_category].permit(:name)
     end
-    
-
-
-
 end
   

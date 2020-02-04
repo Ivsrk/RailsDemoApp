@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :articles do
     collection do
       get :search
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :article_categories
   resources :logins
+  
 "/articles/search"
 "users/:id/articles"
 #,only:[:index,:show,:destroy,:new,:create,:edit,:update]
