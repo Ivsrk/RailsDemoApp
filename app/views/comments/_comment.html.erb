@@ -1,3 +1,4 @@
+<% Rails.logger.debug comment.inspect %>
 <%= form_for(@post ) do |f| %>
 
 
@@ -13,6 +14,7 @@
     </div>
      <%= link_to 'Delete', [comment.post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+     <%= link_to 'Edit' , edit_post_comment_path(@post,comment)%>
   </article>
 </div>
 <%end%>
